@@ -34,6 +34,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.CustomViewhold
     public void onBindViewHolder(@NonNull ListAdapter.CustomViewholder holder, int position) {
         holder.title.setText(datalist.get(position).getTitle());
         holder.body.setText(datalist.get(position).getBody());
+        holder.id.setText(String.valueOf(datalist.get(position).getid()));
+
     }
 
     @Override
@@ -45,8 +47,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.CustomViewhold
     public class CustomViewholder extends RecyclerView.ViewHolder {
         TextView title;
         TextView body;
+        TextView id;
         public CustomViewholder(@NonNull View itemView) {
             super(itemView);
+            id=itemView.findViewById(R.id.id);
             title=itemView.findViewById(R.id.title);
             body=itemView.findViewById(R.id.body);
 

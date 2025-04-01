@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.recycler);
 
         apiInterface=RetrofitInstance.getRetrofit().create(ApiInterface.class);
+
         apiInterface.getPosts().enqueue(new Callback<List<PostPojo>>() {
             @Override
             public void onResponse(Call<List<PostPojo>> call, Response<List<PostPojo>> response) {
